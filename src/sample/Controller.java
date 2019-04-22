@@ -1,12 +1,17 @@
 package sample;
 
 import Connectivity.ConnectionClass;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.event.ActionEvent;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -45,6 +50,13 @@ public class Controller {
 
             if (resultSet.next()){
                 lblCreate.setText("Connected");
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/sample/second.fxml"));
+                Parent root1 = (Parent) fxmlLoader.load();
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root1));
+                stage.show();
+
+
             }else {
 
                 lblCreate.setText("Not Connected");
@@ -53,6 +65,8 @@ public class Controller {
 
 
         } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
