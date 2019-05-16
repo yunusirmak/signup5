@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane prefHeight="611.0" prefWidth="865.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.FirstMovie">
+   <children>
+      <WebView fx:id="web1" layoutX="291.0" layoutY="103.0" minHeight="-1.0" minWidth="-1.0" prefHeight="315.0" prefWidth="560.0" />
+      <ImageView fitHeight="325.0" fitWidth="226.0" layoutX="32.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@photos/avengers.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="151.0" layoutY="14.0" text="AVENGERS: ENDGAME" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic" size="53.0" />
+         </font>
+      </Label>
+      <Label layoutX="439.0" layoutY="438.0" prefHeight="17.0" prefWidth="308.0" text="PG-13 | 3h 1min | Action, Adventure, Fantasy" textFill="WHITE" />
+      <Label layoutX="53.0" layoutY="486.0" prefHeight="84.0" prefWidth="772.0" text="After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to undo Thanos' actions and restore order to the universe." textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

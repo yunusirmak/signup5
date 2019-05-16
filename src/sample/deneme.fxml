@@ -1,10 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Deneme">
-   <Label layoutX="311.0" layoutY="200.0" text="deneme"/>
-</AnchorPane>
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Deneme">
+   <top>
+      <HBox prefHeight="59.0" prefWidth="960.0" style="-fx-background-color: #303030;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnMovies" mnemonicParsing="false" onAction="#ui1" prefHeight="54.0" prefWidth="167.0" style="-fx-background-color: transparent; -fx-text-fill: #f0f0f0;" text="Movies" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets right="5.0" top="2.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnProfile" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#ui2" prefHeight="54.0" prefWidth="167.0" style="-fx-background-color: transparent; -fx-text-fill: #f0f0f0;" text="Profile" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets right="5.0" top="2.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnLogout" layoutX="344.0" layoutY="10.0" mnemonicParsing="false" onAction="#signoff" prefHeight="53.0" prefWidth="167.0" style="-fx-background-color: transparent; -fx-text-fill: #f0f0f0;" text="Log Out" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="445.0" right="5.0" top="2.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>

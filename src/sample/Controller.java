@@ -3,13 +3,14 @@ package sample;
 import Connectivity.ConnectionClass;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
 import javafx.stage.Window;
-import javafx.scene.control.Alert.AlertType;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -72,7 +73,7 @@ public class Controller {
             return;
         }else {
 
-            String sql="INSERT INTO signup_info VALUES ('"+txtSignupName.getText()+"','"+txtSignupSurName.getText()+"', '"+txtSignupMail.getText()+"', '"+txtSignupPassword.getText()+"') ";
+            String sql="INSERT INTO signup_info(FirstName, SurName, Email, Password) VALUES ('"+txtSignupName.getText()+"','"+txtSignupSurName.getText()+"', '"+txtSignupMail.getText()+"', '"+txtSignupPassword.getText()+"') ";
             Statement statement=connection.createStatement();
             statement.executeUpdate(sql);
 
@@ -81,6 +82,10 @@ public class Controller {
 
             // show the dialog
             a1.show();
+            txtSignupName.clear();
+            txtSignupSurName.clear();
+            txtSignupMail.clear();
+            txtSignupPassword.clear();
             return;
         }
 
@@ -99,10 +104,31 @@ public class Controller {
             ResultSet resultSet=statement.executeQuery(sql);
 
             if (resultSet.next()){
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/sample/second.fxml"));
-                Parent root1 = (Parent) fxmlLoader.load();
+                ((Node) actionEvent.getSource()).getScene().getWindow().hide();
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                Pane root= fxmlLoader.load(getClass().getResource("/sample/deneme.fxml").openStream());
+                Deneme deneme=(Deneme)fxmlLoader.getController();
+
+                String userinfo="UPDATE login SET mail= '"+txtLoginMail.getText()+"';";
+                Statement statement2=connection.createStatement();
+                statement2.executeUpdate(userinfo);
+
+
+                String username="UPDATE login LG, signup_info SGN SET LG.name = SGN.FirstName WHERE LG.mail = SGN.Email;";
+                Statement statement3=connection.createStatement();
+                statement3.executeUpdate(username);
+
+                String userlastname="UPDATE login LG, signup_info SGN SET LG.lastname = SGN.SurName WHERE LG.mail = SGN.Email;";
+                Statement statement4=connection.createStatement();
+                statement4.executeUpdate(userlastname);
+
+                String usersid="UPDATE login LG, signup_info SGN SET LG.userid = SGN.IdUser WHERE LG.mail = SGN.Email;";
+                Statement statement5=connection.createStatement();
+                statement5.executeUpdate(usersid);
+
+
                 Stage stage = new Stage();
-                stage.setScene(new Scene(root1));
+                stage.setScene(new Scene(root));
                 stage.show();
 
 
@@ -122,6 +148,7 @@ public class Controller {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
 
 
     }

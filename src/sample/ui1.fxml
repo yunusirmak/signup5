@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="481.0" prefWidth="960.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Ui1">
+   <children>
+      <ImageView fitHeight="235.0" fitWidth="158.0" layoutX="30.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@photos/avengers.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="235.0" fitWidth="158.0" layoutX="214.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@photos/captainmarvel.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="235.0" fitWidth="158.0" layoutX="398.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@photos/dumbo.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="235.0" fitWidth="158.0" layoutX="587.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@photos/little.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="235.0" fitWidth="158.0" layoutX="771.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@photos/us.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutX="30.0" layoutY="318.0" mnemonicParsing="false" onAction="#firstMovieInfo" prefHeight="25.0" prefWidth="158.0" text="Information" />
+      <Button layoutX="30.0" layoutY="343.0" mnemonicParsing="false" onAction="#firstMovieTicket" prefHeight="25.0" prefWidth="158.0" text="Get Tickets" />
+      <Button layoutX="214.0" layoutY="318.0" mnemonicParsing="false" onAction="#secondMovieInfo" prefHeight="25.0" prefWidth="158.0" text="Information" />
+      <Button layoutX="214.0" layoutY="343.0" mnemonicParsing="false" onAction="#secondMovieTicket" prefHeight="25.0" prefWidth="158.0" text="Get Tickets" />
+      <Button layoutX="398.0" layoutY="318.0" mnemonicParsing="false" onAction="#thirdMovieInfo" prefHeight="25.0" prefWidth="158.0" text="Information" />
+      <Button layoutX="398.0" layoutY="343.0" mnemonicParsing="false" onAction="#thirdMovieTicket" prefHeight="25.0" prefWidth="158.0" text="Get Tickets" />
+      <Button layoutX="587.0" layoutY="318.0" mnemonicParsing="false" onAction="#fourthMovieInfo" prefHeight="25.0" prefWidth="158.0" text="Information" />
+      <Button layoutX="587.0" layoutY="343.0" mnemonicParsing="false" onAction="#fourthMovieTicket" prefHeight="25.0" prefWidth="158.0" text="Get Tickets" />
+      <Button layoutX="771.0" layoutY="318.0" mnemonicParsing="false" onAction="#fifthMovieInfo" prefHeight="25.0" prefWidth="158.0" text="Information" />
+      <Button layoutX="771.0" layoutY="343.0" mnemonicParsing="false" onAction="#fifthMovieTicket" prefHeight="25.0" prefWidth="158.0" text="Get Tickets" />
+   </children>
+</AnchorPane>
